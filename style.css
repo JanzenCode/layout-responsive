@@ -1,8 +1,85 @@
-* {
-    box-sizing: border-box;
+body {
     margin: 0;
+    font-family: sans-serif;
 }
 
-h1 {
-    color: red;
+article {
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    flex: 1 50px;
+    background: lightblue;
+}
+
+header {
+    background: rgb(57, 147, 177);
+}
+
+main { 
+    background: white;
+    padding: 1rem;
+}
+
+#signup {
+    background: #c7a56b;
+}
+
+#feature-1 {
+    background: lightcoral;
+
+}
+#feature-2 {
+    background: rgb(209, 118, 118);
+}
+#feature-3 {
+    background: pink;
+}
+
+header, section {
+    flex: 1 50vw;
+    min-height: 200px;
+}
+
+header, section, menu, nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tablet ScreenSize */
+@media screen and (min-width: 500px) {
+  article { 
+    flex-flow: row wrap;
+  }
+  nav {
+    flex: 100%;
+    min-height: 50px;
+  }
+  section {
+    height: 50vw;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 899px) {
+    article {
+        flex-flow: row wrap;
     }
+    nav {
+        flex: 100%;
+        min-height: 50px;
+      }
+    .feature {
+        flex: calc(100vw / 3);
+        min-height: calc(100vw / 1.25);
+    }
+    #signup {
+        order: 1;
+    }
+    header {
+        flex: 100vw;
+    }
+    main {
+        order: 2;
+    }
+}
